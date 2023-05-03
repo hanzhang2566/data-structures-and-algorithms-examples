@@ -10,9 +10,9 @@ import java.util.Arrays;
  *
  * @author <a href="mailto:hanzhang2566@foxmail.com">hanzhang</a>
  */
-public class SortTest {
+public class BubbleSortTest {
     @Test
-    public void bubbleTest() {
+    public void test01() {
         int[] nums = new int[]{4, 2, 7, 1, 3};
         BubbleSort bubbleSort = new BubbleSort();
         bubbleSort.sort(nums);
