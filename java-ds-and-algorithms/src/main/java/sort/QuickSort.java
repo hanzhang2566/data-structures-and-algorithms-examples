@@ -17,6 +17,26 @@ public class QuickSort {
         if (head >= tail) {
             return;
         }
+        int pivotIndex = partition(head, tail);
+        sort(head, pivotIndex - 1);
+        sort(pivotIndex + 1, tail);
+    }
+
+    public int select(int head, int tail, int targetIndex) {
+        if (head >= tail) {
+            return -1;
+        }
+        int pivotIndex = partition(head, tail);
+        if (pivotIndex > targetIndex) {
+            return select(head, pivotIndex - 1, targetIndex);
+        } else if (pivotIndex < targetIndex) {
+            return select(pivotIndex + 1, tail, targetIndex);
+        } else {
+            return pivotIndex;
+        }
+    }
+
+    private int partition(int head, int tail) {
         int left = head;
         int right = tail;
 
@@ -30,8 +50,7 @@ public class QuickSort {
             swap(nums, left, right);
         }
         swap(nums, left, head);
-        sort(head, right - 1);
-        sort(right + 1, tail);
+        return left;
     }
 
     public void swap(int[] nums, int left, int right) {
