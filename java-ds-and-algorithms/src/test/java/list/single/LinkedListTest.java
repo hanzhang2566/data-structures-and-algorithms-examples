@@ -1,4 +1,4 @@
-package list;
+package list.single;
 
 import list.single.LinkedList;
 import list.single.Node;
